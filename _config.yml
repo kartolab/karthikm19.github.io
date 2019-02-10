@@ -1,0 +1,34 @@
+title: EIGHT19
+slogan: coding is fun
+author: Karthik Nataraj
+email: karthikzmsg@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Senior Full-Stack PHP Developer
+
+url: https://eight19.github.io
+baseurl: ""
+
+twitter_username: karthikzmsg
+github_username:  eight19
+
+gravid:
+  date_format: "%m/%d/%Y"
+
+language: en
+enable_reward: false
+
+google_analytics:
+  enable: true
+  tracking_id: "UA-48441839-1"
+
+# Build settings
+markdown: kramdown
+# theme: gravid
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+plugins_dir:
+  - jekyll-paginate
+paginate: 3
+paginate_path: "/journal/page:num/"
