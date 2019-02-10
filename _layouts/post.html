@@ -9,6 +9,12 @@ layout: default
     {% endif %}
     {{ page.title }}
   </h1>
+  <span class="tags">[
+	{% for tag in page.tags %}
+		{% capture tag_name %}{{ tag }}{% endcapture %}
+		<code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;
+	{% endfor %}
+  ]</span>
   {{ content }}
 
   {% if site.enable_reward %} {% include reward.html %} {% endif %}
