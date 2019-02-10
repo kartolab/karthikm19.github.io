@@ -1,6 +1,12 @@
 ---
-published: false
+layout: post
+title: "Adding keyboard shortcut to a web page"
 ---
+
+Step by step approach to add keyboard short to a web page using Javascript/Jquery.
+
+<!-- more -->
+
 Nowadays everyone have either mouse or touch pad or similar to move around the web page. But, having keyboard shortcut is still a great ingredient on a web page for users. Especially for the regular users of a website who knows exactly which page has what. In this article I would like to explain how to achieve this. I have used Jquery and  basic Javascript code to do it.
 
 #### Keydown Event

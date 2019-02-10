@@ -5,6 +5,5 @@ layout: blog
 Eight19's Blog
 =============
 
-Being talented just like being gravid, must be known with a long time past. I think I need more time to be talented, so I choose an easy one and named `gravid`. 😊
+I use this space to write my experiences during development which I hope will help you. Feel free to browse my blog and leave any comments on the post or you can write to [karthikzmsg@gmail.com](mailto::karthikzmsg@gmail.com).
 
-I still write something, as below:
