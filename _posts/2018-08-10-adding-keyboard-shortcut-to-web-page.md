@@ -2,6 +2,7 @@
 layout: post
 title: "Adding keyboard shortcut to a web page"
 tags: Javascript Jquery
+comments: true
 ---
 
 Step by step approach to add keyboard short to a web page using Javascript/Jquery.
