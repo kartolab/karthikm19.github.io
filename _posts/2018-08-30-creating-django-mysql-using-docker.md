@@ -96,5 +96,78 @@ Go to terminal and run the below command
 ```
 docker-compose build
 ```
+##### output:
+<pre style="background-color: black; color: white;">
+Building djangoweb
+Step 1/8 : FROM python:3.6
+ ---> 5b0503f864f4
+Step 2/8 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> fb7e28e047ff
+Step 3/8 : ENV http_proxy proxy.intra.bt.com:80
+ ---> Using cache
+ ---> 04eca146ce18
+Step 4/8 : ENV https_proxy proxy.intra.bt.com:80
+ ---> Using cache
+ ---> d49277b01098
+Step 5/8 : RUN mkdir /application
+ ---> Using cache
+ ---> 1434463762ea
+Step 6/8 : WORKDIR "/application"
+ ---> Using cache
+ ---> 68fece209b83
+Step 7/8 : ADD requirements.txt /application/
+ ---> Using cache
+ ---> fbc5ad46ccb5
+Step 8/8 : RUN pip install -r requirements.txt
+ ---> Using cache
+ ---> 3e4a8a50a721
+Successfully built 3e4a8a50a721
+Successfully tagged dockerdjangomysql_djangoweb:latest
+</pre>
+
+#### Create a new Django project
+
+Run the below command to create a new Django project `example`.
+
+```
+docker-compose run djangoweb django-admin startproject example .
+```
+
+If everything goes well, you will ge the prompt without any errors or messages.
+
+`ls -ltr`
+
+You will notice a new directory `example` and a python file `manage.py` has been generated in your project root directory.
+
+Hurray, now it's time to run our Django example app. 
+
+Go to your terminal and run the below command,
+
+```
+docker-compose up
+```
+
+It output something like below:
+
+<pre style="background-color: black; color: white;">
+Starting djangoweb
+Attaching to djangoweb
+djangoweb    | Performing system checks...
+djangoweb    | 
+djangoweb    | System check identified no issues (0 silenced).
+djangoweb    | 
+djangoweb    | You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+djangoweb    | Run 'python manage.py migrate' to apply them.
+djangoweb    | February 11, 2019 - 09:57:04
+djangoweb    | Django version 1.11, using settings 'example.settings'
+djangoweb    | Starting development server at http://0.0.0.0:8000/
+djangoweb    | Quit the server with CONTROL-C.
+</pre>
+
+where you can see that the server has been started successfully at `http://0.0.0.0:8000/`.
+
+Open your preferred browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
 
 <span style="color:red;">to be continued....</span>
