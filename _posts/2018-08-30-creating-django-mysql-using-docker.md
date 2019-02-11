@@ -169,7 +169,7 @@ where you can see that the server has been started successfully at `http://0.0.0
 
 Open your preferred browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and you will see Django's welcome screen as shown below. 
 
-![Welcome to Django](./images/welcome-to-django.png)
+![Welcome to Django](/assets/posts/welcome-to-django.png)
 
 Excellent! 
 
