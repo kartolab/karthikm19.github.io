@@ -167,7 +167,12 @@ djangoweb    | Quit the server with CONTROL-C.
 
 where you can see that the server has been started successfully at `http://0.0.0.0:8000/`.
 
-Open your preferred browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Open your preferred browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and you will see Django's welcome screen as shown below. 
 
+![Welcome to Django](./images/welcome-to-django.png)
+
+Excellent! 
+
+Let's go ahead and setup MySQL for our project.
 
 <span style="color:red;">to be continued....</span>
