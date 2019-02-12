@@ -346,6 +346,42 @@ djangoweb    | Starting development server at http://0.0.0.0:8000/
 djangoweb    | Quit the server with CONTROL-C.
 </pre>
 
+### Database migrations
 
+Now if you `bash` into the Mysql container, you will see a new table `django_migrations`.
+
+In the above section you may notice the below message "<span style="color:maroon;">You have 13 unapplied migration(s).......</span>". This is to do the initial migration of tables and users. If you look at the next line of the above message there is a command Django is recommending for us to run,
+
+Go to a new terminal and go inside the `djangoweb` container
+
+```
+docker-compose exec djangoweb bash
+```
+and run the command and you will see the migration process as shown below.
+
+<pre style="background-color: black; color: white;">
+root@372dbc6f2047:/application# python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+	HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/1.11/ref/databases/#mysql-sql-mode
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+</pre>
 
 <span style="color:red;">to be continued....</span>
