@@ -185,18 +185,13 @@ We need to choose a MySQL image from docker hub for us to use in our setup. For 
 
 - Open `docker-compose.yml`
 
-  Add below config on top just below the `version`
-  ```
-  volumes:
-    db-data:
-  ```
-  Add the below config in the end.
+- Add the below config in the end.
 
   ```
   djangodb:
   image: mysql:5.6
   volumes:
-  - db-data:/db-data
+  - ./db-data:/db-data
   environment:
   - MYSQL_DATABASE=docker_django_mysql
   - MYSQL_PORT=3306
