@@ -346,6 +346,20 @@ djangoweb    | Starting development server at http://0.0.0.0:8000/
 djangoweb    | Quit the server with CONTROL-C.
 </pre>
 
+Now all working fine so we don't really need to run the containers in foreground.
+
+- Go to terminal and `ctrl-c` to close the container and run
+	```
+	docker-compose up -d
+	```
+	which will run the containers in detached mode.
+	After few minutes, run
+	```
+	docker-compose restart djangoweb
+	```
+	to restart the web container to connect to databases. <span style="background-color:yellow; color:red;">This can be handled using a different mechanism by writing a bash script to wait and connect. I will probably do this in another post.</span>
+	
+
 ### Database migrations
 
 Now if you `bash` into the Mysql container, you will see a new table `django_migrations`.
