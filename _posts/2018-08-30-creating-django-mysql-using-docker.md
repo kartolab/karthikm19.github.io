@@ -384,4 +384,25 @@ Running migrations:
   Applying sessions.0001_initial... OK
 </pre>
 
+If you now login to Mysql and you will see all the migrated tables now.
+
+<pre style="background-color: black; color: white;">
+mysql> show tables;
++-------------------------------+
+| Tables_in_docker_django_mysql |
++-------------------------------+
+| auth_group                    |
+| auth_group_permissions        |
+| auth_permission               |
+| auth_user                     |
+| auth_user_groups              |
+| auth_user_user_permissions    |
+| django_admin_log              |
+| django_content_type           |
+| django_migrations             |
+| django_session                |
++-------------------------------+
+10 rows in set (0.00 sec)
+</pre>
+
 <span style="color:red;">to be continued....</span>
