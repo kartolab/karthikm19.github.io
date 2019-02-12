@@ -276,5 +276,76 @@ where you can see the database "docker_django_mysql" has been created. Cool, isn
 
 So, now we have both Django and Mysql container up and running. Below are the changes we have to make in Django application to use MySQL database.
 
+Open `example/settings.py` and find the DATABASES config as shown below
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
+
+By default Django creates an app with Sqlite3 database. In our example we are trying to use Mysql as database so we need tweak this config slightly as below.
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'djangodb',
+        'NAME': 'docker_django_mysql',
+        'USER': 'root',
+        'PASSWORD': 'pass',
+        'PORT': '3306'
+    },
+}
+```
+
+where ,
+	
+- ENGINE - 'django.db.backends.mysql' is the MYSQL engine for Django
+- HOST - Mysql container. In our example we created 'djangodb'. Please refer `docker-compose.yml`
+- NAME - Database name
+- Credentials - Username and password
+- PORT - port is the container's port
+
+Go to terminal and `Ctrl-C` to cancel the `docker-compose up` and re-run the command again.
+
+```
+docker-compose up
+```
+
+Now you will probably getting error message like below in terminal. <span style="background-color:yellow; color:red;">Ignore this error for now.</span>
+
+<pre style="background-color: black; color: white;">
+djangoweb    |   File "/usr/local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+djangoweb    |     conn = Database.connect(**conn_params)
+djangoweb    |   File "/usr/local/lib/python3.6/site-packages/MySQLdb/__init__.py", line 85, in Connect
+djangoweb    |     return Connection(*args, **kwargs)
+djangoweb    |   File "/usr/local/lib/python3.6/site-packages/MySQLdb/connections.py", line 208, in __init__
+djangoweb    |     super(Connection, self).__init__(*args, **kwargs2)
+djangoweb    | django.db.utils.OperationalError: (2006, 'Can\'t connect to MySQL server on \'djangodb\' (111 "Connection refused")')
+</pre>
+
+This error is because `djangoweb` container has been created immediately and trying to connect to the database before `djangodb` has been started and ready to accept connections.
+
+So, after good 20-30 seconds, open a new terminal and run the below command to restart only `djangoweb` container so that web container will be able to connect to the database now.
+
+```
+docker-compose restart djangoweb
+```
+Now, you will be able to see something like below:
+
+<pre style="background-color: black; color: white;">
+djangoweb    | You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+djangoweb    | Run 'python manage.py migrate' to apply them.
+djangoweb    | February 12, 2019 - 17:00:52
+djangoweb    | Django version 1.11, using settings 'example.settings'
+djangoweb    | Starting development server at http://0.0.0.0:8000/
+djangoweb    | Quit the server with CONTROL-C.
+</pre>
+
+
 
 <span style="color:red;">to be continued....</span>
