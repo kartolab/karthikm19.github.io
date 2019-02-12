@@ -405,4 +405,33 @@ mysql> show tables;
 10 rows in set (0.00 sec)
 </pre>
 
-<span style="color:red;">to be continued....</span>
+#### Create `superuser`
+
+There is no users setup at the moment so we need to setup a setup user to access the admin app.
+
+- In terminal `bash` in to `djangoweb` container
+- Run the below command and enter the required name, email and password as shown below:
+	```
+    root@372dbc6f2047:/application# python manage.py createsuperuser
+    Username (leave blank to use 'root'): admin
+    Email address: admin@eight19.github.io
+    Password: 
+    Password (again): 
+    Superuser created successfully.
+    ```
+
+### Login to Admin app
+
+Now we have done all the necessary steps to login to our admin app.
+
+- Open browser and go to [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+- Login using the admin username and password we have just created above and you will see admin home screen as below where you are manage the groups and users for your site.
+
+![Django Admin Page](/assets/posts/django-admin-page.png)
+
+
+Whoop whoop, you have successfully created and seutp a Django app.
+
+Hope you have enjoyed this and you find this really useful.
+
+Happy coding :)
