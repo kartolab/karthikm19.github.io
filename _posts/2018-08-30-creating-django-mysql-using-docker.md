@@ -175,4 +175,68 @@ Excellent!
 
 Let's go ahead and setup MySQL for our project.
 
+### Setup MySQL
+
+#### Update `docker-compose`
+
+We need to choose a MySQL image from docker hub for us to use in our setup. For our example I have chosen `MySQL 5.6`.
+
+- Create a new directory `db-data` in your project root.
+
+- Open `docker-compose.yml`
+
+  Add below config on top just below the `version`
+  ```
+  volumes:
+    db-data:
+  ```
+  Add the below config in the end.
+
+  ```
+  djangodb:
+  image: mysql:5.6
+  volumes:
+  - db-data:/db-data
+  environment:
+  - MYSQL_DATABASE=docker_django_mysql
+  - MYSQL_PORT=3306
+  - MYSQL_USER=user
+  - MYSQL_PASSWORD=pass
+  - MYSQL_ROOT_PASSWORD=pass
+  ports:
+  - "8306:3306"
+  container_name: djangodb
+  ```
+
+	where,
+
+	  image is Mysql 5.6 as we discussed
+      volume is to use the db-data to store database persistent data
+      environment is used to create a new database for our example project on post 3306 with default username and password.
+
+#### Run `docker-compose`
+
+It is now time to build MySQL image in our machine. Go to terminal and run the below command.
+
+```
+docker-compose up
+```
+
+This will pull mysql image from Docker Hub if it doesn't already exists. Else it will justs start the container for `djangodb` and create the database with users we have configured.
+
+If everything goes well then you will see both `djangoweb` and `djangodb` containers created successfully and in "Up" state by running the below command in a new terminal.
+
+```
+docker-compose ps
+```
+##### Output
+<pre style="background-color: black; color: white;">
+  Name                 Command               State           Ports          
+---------------------------------------------------------------------------
+djangodb    docker-entrypoint.sh mysqld      Up      0.0.0.0:8306->3306/tcp 
+djangoweb   python3 manage.py runserve ...   Up      0.0.0.0:8000->8000/tcp 
+
+</pre>
+
+
 <span style="color:red;">to be continued....</span>
