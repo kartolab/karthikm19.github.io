@@ -235,8 +235,46 @@ docker-compose ps
 ---------------------------------------------------------------------------
 djangodb    docker-entrypoint.sh mysqld      Up      0.0.0.0:8306->3306/tcp 
 djangoweb   python3 manage.py runserve ...   Up      0.0.0.0:8000->8000/tcp 
-
 </pre>
+
+#### How to login to Mysql Database?
+
+We have just created a Mysql container and so we should be able to login to Mysql and check whether everything has been created successfully.
+
+Go to new terminal and run the below command,
+
+```
+docker-compose exec djangodb bash
+```
+
+which will open the container in an interactive mode with bash prompt.
+
+Run the below command now to login to mysql
+
+```
+mysql -uroot -ppass
+```
+where, root/pass is the one we have configure in our `docker-compose.yml` under `djangodb`.
+
+You will now see the `mysql` prompt where you can run any basic Mysql commands as shown below.
+
+<pre style="background-color: black; color: white;">
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| information_schema  |
+| docker_django_mysql |
+| mysql               |
+| performance_schema  |
++---------------------+
+</pre>
+
+where you can see the database "docker_django_mysql" has been created. Cool, isn't it?
+
+### Connecting MySQL from Django
+
+So, now we have both Django and Mysql container up and running. Below are the changes we have to make in Django application to use MySQL database.
 
 
 <span style="color:red;">to be continued....</span>
