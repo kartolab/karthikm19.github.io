@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-![Karthik Home Banner](/assets/karthik_home_banner.jpg)
+<img src="/assets/karthik_home_banner.jpg" alt="Karthik Home Banner" width="236px"/>
 
 I’m Karthik, full-stack web developer from India, live in England. I'm currently a "Senior Consultant" at Torry Harris Business Solutions where we provide software services to enterprise clients.
 
