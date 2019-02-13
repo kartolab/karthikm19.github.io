@@ -9,6 +9,8 @@ A Step-by-step guide to setup development environment for Django project with My
 
 <!-- more -->
 
+![Docker Django Mysql Banner](/assets/posts/docker-django-mysql-banner.png)
+
 ### About Docker
 
 Docker is a computer program that performs operating-system-level virtualization, also known as "containerization". This is a powerful tool for development because it makes the process of configuring and setting up environments or switching between the different projects in the same development box.
