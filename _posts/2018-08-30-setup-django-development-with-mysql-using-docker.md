@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Creating Django project with MySQL using Docker"
+title: "Setup Django development with MySQL using Docker"
 tags: Docker Django Mysql
 comments: true
 ---
 
-A Step-by-step guide to create a Django project with MySQL using Docker.
+A Step-by-step guide to setup development environment for Django project with MySQL using Docker.
 
 <!-- more -->
 
@@ -17,7 +17,7 @@ Read more about docker [here](https://www.docker.com).
 
 ### Prerequisites
 
-As we discussed, we are going to use Docker, we will be using `Docker` and `Docker Compose`.
+As we discussed, we are going to use `Docker` and `Docker Compose`.
 
 ### Let's start
 
