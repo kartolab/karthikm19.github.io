@@ -3,6 +3,8 @@ layout: page
 title: About
 ---
 
+![Karthik Home Banner](/assets/karthik_home_banner.jpg)
+
 I’m Karthik, full-stack web developer from India, live in England. I'm currently a "Senior Consultant" at Torry Harris Business Solutions where we provide software services to enterprise clients.
 
 `My primary principles`: Web is for everyone & Web site should be easy to use. The combination of both is a long-lived investment that helps to achieve business goals. I enjoy turning complex problems into simple, beautiful and intuitive designs.
