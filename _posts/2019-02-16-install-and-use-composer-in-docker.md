@@ -7,7 +7,7 @@ comments: true
 
 Simple approach to install and use Composer in Docker container.
 <!-- more -->
-![Docker Django Mysql Banner](/assets/posts/docker-django-mysql-banner.png)
+![Docker PHP Composer Banner](/assets/posts/docker-php-composer-banner.png)
 
 ### Overview
 [Docker](https://www.docker.com) is a computer program that performs operating-system-level virtualization, also known as "containerization".
