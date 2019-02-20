@@ -6,6 +6,9 @@ comments: true
 ---
 Install and run PAC Manager in Linux machine.
 <!-- more -->
+
+![PAC Manager Banner](/assets/posts/pac-manager-banner.jpg)
+
 If you are Linux system administrator or DevOps enginerr, chances are you've got more than one server that you have to manage every day. You may even have to manage similar machines, for example there may be 4 to 8 servers in production environment. You may have to run the same command on all the machines at once. 
 
 You can login to each maching using SSH and run commands on each one serially, or you can save yourself a lot of time and effort using some popular tools like ClusterSSH, etc.
@@ -25,6 +28,8 @@ $ wget http://sourceforge.net/projects/pacmanager/files/pac-4.0/pac-4.5.5.5-all.
 ```
 $ sudo dpkg -i pac-4.5.5.5-all.deb
 ```
+
+![PAC Manager Dependency Error](/assets/posts/pac-manager-dependecy-error.jpg)
 
 If you are getting any dependencies errors as below then execute the below command.
 
