@@ -8,7 +8,7 @@ Install and run PAC Manager in Linux machine.
 <!-- more -->
 
 <p align="center"> 
-![PAC Manager Banner](/assets/posts/pac-manager-banner.png)
+   <img src="PAC Manager Banner" alt="/assets/posts/pac-manager-banner.png" />
 </p>
 
 If you are Linux system administrator or DevOps enginerr, chances are you've got more than one server that you have to manage every day. You may even have to manage similar machines, for example there may be 4 to 8 servers in production environment. You may have to run the same command on all the machines at once. 
