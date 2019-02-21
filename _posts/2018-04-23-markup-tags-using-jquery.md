@@ -10,6 +10,9 @@ Adding simple markup tags dropdown to Textarea using Jquery
 
 MarkupTags is a very lightweight Javascript library to have a simple HTML tag for the selected content of form elements like Textarea, Input. It is fairly straight-forward and easy to use.
 
+### Demo
+Simple demo can be found ![here](https://github.com/eight19/markuptags)
+
 ### Requirement ###
 
 * Jquery Library
